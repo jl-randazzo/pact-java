@@ -49,6 +49,18 @@
 	<build>
 		<plugins>
 			<plugin>
+    				<groupId>au.com.dius.pact.provider</groupId>
+    				<artifactId>maven</artifactId>
+    				<version>4.1.11</version>
+    				<configuration>
+				<pactDirectory>target/pacts</pactDirectory> 
+      				<pactBrokerUrl>http://localhost:9292/</pactBrokerUrl>
+      				<projectVersion>1.0.0</projectVersion> <!-- Defaults to ${project.version} -->
+      				<trimSnapshot>true</trimSnapshot> <!-- Defaults to false -->
+      				<skipPactPublish>false</skipPactPublish> <!-- Defaults to false -->
+    				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
