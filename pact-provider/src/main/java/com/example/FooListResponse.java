@@ -7,6 +7,8 @@ public class FooListResponse {
 	
 	private List<Foo> foos;
 
+	private String identifier;
+
 	public List<Foo> getFoos() {
 		return foos;
 	}
@@ -32,4 +34,12 @@ public class FooListResponse {
 
         return equal;
     }
+
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+	}
 }
