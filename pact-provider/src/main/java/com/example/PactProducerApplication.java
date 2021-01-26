@@ -1,7 +1,6 @@
 package com.example;
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,7 +19,9 @@ public class PactProducerApplication {
 	}
 	
     @RequestMapping(value = "/foos", method = RequestMethod.GET)
-    public ResponseEntity<List<Foo>> foos() {
-        return new ResponseEntity<>(Arrays.asList(new Foo(42), new Foo(100)), HttpStatus.OK);
+    public ResponseEntity<FooListResponse> foos() {
+    	FooListResponse fooLR = new FooListResponse();
+    	fooLR.setFoos(Arrays.asList(new Foo(42), new Foo(100)));
+        return new ResponseEntity<>(fooLR, HttpStatus.OK);
     }
 }
